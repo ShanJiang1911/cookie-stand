@@ -44,64 +44,61 @@ const tableElem = document.createElement('table');
 articleElem.appendChild(tableElem);
 console.log(tableElem);
 
-// stuck here page just don't let me run
+function hourTableRow() {
+    const trElemHour = document.createElement('tr')
+    tableElem.appendChild(trElemHour);
 
+    let thElemHour = document.createElement('th')
+    thElemHour.textContent = ('Hours')
+    trElemHour.appendChild(thElemHour);
 
-// function hourTableRow() {
-//     const trElemHour = document.createElement('tr')
-//     tableElem.appendChild(trElemHour);
+    for (let i =0; i < hoursOfOperations; i++) {
+        let tdElemHour = document.createElement('td')
+        tdElemHour.textContent = `${hoursOfOperations[i]}`
+        trElemHour.appendChild(tdElemHour);
+    }
+}
 
-//     let thElemHour = document.createElement('th')
-//     thElemHour.textContent = ('Hours')
-//     trElemHour.appendChild(thElemHour);
+function addTable(location) {
+    location.totalCookies();
+    const trElem = document.createElement('tr');
+    tableElem.appendChild(trElem);
 
-//     for (let i =0; i < hoursOfOperations; i++) {
-//         let tdElemHour = document.createElement('td')
-//         tdElemHour.textContent = `${hoursOfOperations[i]}`
-//         trElemHour.appendChild(tdElemHour);
-//     }
-// }
+    let thElem = document.createElement('th');
+    thElem.textContent = `${location.cityName}`
+    trElem.appendChild(thElem);
 
-// function addTable(location) {
-//     location.totalCookies();
-//     const trElem = document.createElement('tr');
-//     tableElem.appendChild(trElem);
+    for (let i = 0; i < hoursOfOperations.length - 1; i++) {
+        let tdElem = document.createElement('td');
+        tdElem.textContent = `${location.cookiesPerHourList[i]}`
+        trElem.appendChild(tdElem);
+    }
+}
 
-//     let thElem = document.createElement('th');
-//     thElem.textContent = `${location.cityName}`
-//     trElem.appendChild(thElem);
+function totalRow() {
+    const trElemTotal = document.createElement('tr');
+    tableElem.appendChild(trElemTotal);
 
-//     for (let i = 0; i < hoursOfOperations.length - 1; i++) {
-//         let tdElem = document.createElement('td');
-//         tdElem.textContent = `${location.cookiesPerHourList[i]}`
-//         trElem.appendChild(tdElem);
-//     }
-// }
+    let tfElemTotal = document.createElement('tf');
+    tfElemTotal.textContent = ('Total');
+    trElemTotal.appendChild(tfElemTotal);
 
-// function totalRow() {
-//     const trElemTotal = document.createElement('tr');
-//     tableElem.appendChild(trElemTotal);
+    for (let i = 0; i < hoursOfOperations.length; i++) {
+        let tdElemTotal = document.createElement('td');
+        trElemTotal.appendChild(tdElemTotal);
+        let totally = 0;
+        for (let j = 0; j < locationList.length; j++) {
+            Total += locationList[j].cookiesPerHourList[i];
+        }
+        tdElemTotal.textContent = Total
+    }
+}
 
-//     let tfElemTotal = document.createElement('tf');
-//     tfElemTotal.textContent = ('Total');
-//     trElemTotal.appendChild(tfElemTotal);
+hourTableRow();
+totalRow();
 
-//     for (let i = 0; i < hoursOfOperations.length; i++) {
-//         let tdElemTotal = document.createElement('td');
-//         trElemTotal.appendChild(tdElemTotal);
-//         let totally = 0;
-//         for (let j = 0; j < locationList.length; j++) {
-//             Total += locationList[j].cookiesPerHourList[i];
-//         }
-//         tdElemTotal.textContent = Total
-//     }
-// }
-
-// hourTableRow();
-// totalRow();
-
-// addTable(seattleStore);
-// addTable(tokyoStore);
-// addTable(dubaiStore);
-// addTable(parisStore);
-// addTable(limaStore);
+addTable(seattleStore);
+addTable(tokyoStore);
+addTable(dubaiStore);
+addTable(parisStore);
+addTable(limaStore);
