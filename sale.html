@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Salmon Cookies</title>
+    <link href="reset.css" type="text/css" rel="stylesheet"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
     <header>
-        <title>Pet's Salmon Cookies</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <img src="Image/fish.jpeg">
+        <h1>Pet' Salmon Cookie</h1>
     </header>
-    <body>
-        <header>
-            <img src="image/fish.jpeg" alt="">
-            <H1>Pet's Salmon Cookies I likes</H1>
-            
-        </header>
-        <main>
-            <h2>Sales by different Stores</h2>
-            <div>
-                <img src="image/salmon.png" alt="">
-            </div>
-            <div id="cookieReports">
-                <script src="app.js"></script>
-                <p>
-                    <a href="index.html">Back to Main Page</a>
-                </p>       
-                
-                
-            </div>
-
-        </main>
-        <footer>
-            
-        </footer>
-
-
-    </body>
+    <main>
+      <h2>Our Stores' Sales Data</h2>
+      <p>Back to main page, click 
+        <a href="index.html">Here !</a>
+      </p>
+      <img src="image/salmon.png" alt="">
+      <section>
+          <form id="addStore">
+              <fieldset>
+                  <legend>Add New Store</legend>
+                  <label>Store Name
+                    <input type="text" name="storeName"/>
+                  </label>
+                  <label>Min Customer Per Hour
+                    <input type="text" name="minCustomerPerHour"/>
+                  </label>
+                  <label >Max Customer Per Hour
+                      <input type="text" name="maxCustomerPerHour"/>
+                  </label>
+                  <label>Avg Customer Sale
+                    <input type="text" name="avgCustomerSale"/>
+                  </label>
+              </fieldset>
+              <button type="submit">Submit</button>
+          </form>
+      </section>
+      <div id="Saleslist"></div>
+      <div id='table'></div>
+    </main>
+    <footer>
+        <p>Copyright: Codefellows201. This website is for display only.</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
 </html>
