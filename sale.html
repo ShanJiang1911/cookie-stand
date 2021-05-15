@@ -4,20 +4,28 @@
     <title>Salmon Cookies</title>
     <link href="reset.css" type="text/css" rel="stylesheet"/>
     <link href="style.css" type="text/css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
         <img src="Image/fish.jpeg">
+        <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+            <style>
+                h1 {
+                    font-family: 'Frijole', cursive;
+                }
+            </style>
         <h1>Pet' Salmon Cookie</h1>
     </header>
     <main>
-      <h2>Our Stores' Sales Data</h2>
-      <p>Back to main page, click 
-        <a href="index.html">Here !</a>
-      </p>
-      <img src="image/salmon.png" alt="">
-      <section>
+      <section id="four">
+        <p>Back to main page, click 
+          <a href="index.html">Here !</a>
+        </p>
+      </section>
+      <section id="one">
+        <img src="image/salmon.png" alt="">
+      </section>
+      <section id="form">
           <form id="addStore">
               <fieldset>
                   <legend>Add New Store</legend>
@@ -37,8 +45,10 @@
               <button type="submit">Submit</button>
           </form>
       </section>
-      <div id="Saleslist"></div>
-      <div id='table'></div>
+      <section id="jslist">
+        <div id="Saleslist"></div>
+        <div id='table'></div>
+      </section>
     </main>
     <footer>
         <p>Copyright: Codefellows201. This website is for display only.</p>
